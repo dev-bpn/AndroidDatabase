@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this , Activity_Prefs_A.class));
         }else if(id == R.id.action_file_storage){
             startActivity(new Intent(this , Activity_FileStorage_A.class));
+        }else if(id == R.id.action_file_external_storage){
+            startActivity(new Intent(this , Activity_ExternalAndCache_A.class));
         }
 
         return super.onOptionsItemSelected(item);

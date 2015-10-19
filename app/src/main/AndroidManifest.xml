@@ -32,6 +32,14 @@
             android:name=".Activity_FileStorage_B"
             android:label="@string/title_activity_activity__file_storage__b" >
         </activity>
+        <activity
+            android:name=".Activity_ExternalAndCache_A"
+            android:label="@string/title_activity_activity__external_and_cache_" >
+        </activity>
+        <activity
+            android:name=".Activity_ExternalAndCache_B"
+            android:label="@string/title_activity_activity__external_and_cache__b" >
+        </activity>
     </application>
 
 </manifest>

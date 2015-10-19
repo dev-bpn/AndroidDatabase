@@ -11,8 +11,13 @@
     <item
         android:id="@+id/action_file_storage"
         android:orderInCategory="101"
-        android:title="@string/file_storage"
+        android:title="@string/internal_File_storage"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_file_external_storage"
+        android:orderInCategory="101"
+        android:title="@string/external_storage"
+        app:showAsAction="never" />
 
 </menu>

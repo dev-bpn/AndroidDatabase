@@ -8,5 +8,9 @@
     <string name="shared_preference">SharedPreference</string>
     <string name="title_activity_activity__file_storage_">Activity_FileStorage_A</string>
     <string name="title_activity_activity__file_storage__b">Activity_FileStorage_B</string>
-    <string name="file_storage">FIle Storage</string>
+    <string name="internal_File_storage">Internal File Storage</string>
+    <string name="external_storage">External and Cache</string>
+    <string name="title_activity_activity__external_and_cache_">Activity_ExternalAndCache_A</string>
+    <string name="title_activity_activity__external_and_cache__b">Activity_ExternalAndCache_B
+    </string>
 </resources>
