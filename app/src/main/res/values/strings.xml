@@ -6,4 +6,7 @@
     <string name="title_activity_activity__b">Activity_Prefs_B</string>
     <string name="title_activity_activity_">Activity_Prefs_A</string>
     <string name="shared_preference">SharedPreference</string>
+    <string name="title_activity_activity__file_storage_">Activity_FileStorage_A</string>
+    <string name="title_activity_activity__file_storage__b">Activity_FileStorage_B</string>
+    <string name="file_storage">FIle Storage</string>
 </resources>
