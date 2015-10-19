@@ -20,4 +20,9 @@
         android:title="@string/external_storage"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_sqlite"
+        android:orderInCategory="101"
+        android:title="@string/sqlite"
+        app:showAsAction="never" />
 </menu>

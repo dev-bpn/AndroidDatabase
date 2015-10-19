@@ -13,4 +13,5 @@
     <string name="title_activity_activity__external_and_cache_">Activity_ExternalAndCache_A</string>
     <string name="title_activity_activity__external_and_cache__b">Activity_ExternalAndCache_B
     </string>
+    <string name="sqlite">SQLite Database</string>
 </resources>
