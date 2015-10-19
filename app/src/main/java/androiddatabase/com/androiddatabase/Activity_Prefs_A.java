@@ -11,15 +11,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Activity_A extends AppCompatActivity {
+public class Activity_Prefs_A extends AppCompatActivity {
 
     EditText name , password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
-        name = (EditText) findViewById(R.id.usernameEt);
-        password = (EditText) findViewById(R.id.passwordEt);
+        name = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
     }
 
     public void save(View view){
@@ -36,7 +36,7 @@ public class Activity_A extends AppCompatActivity {
     }
 
     public void next(View view){
-        Intent intent = new Intent(this , Activity_B.class);
+        Intent intent = new Intent(this , Activity_Prefs_B.class);
         startActivity(intent);
     }
     @Override

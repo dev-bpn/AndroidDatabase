@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Activity_B extends AppCompatActivity {
+public class Activity_Prefs_B extends AppCompatActivity {
 
     private static final String DEFAULT_VAL = "N/A";
     EditText name, password;
@@ -19,8 +19,8 @@ public class Activity_B extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__b);
-        name = (EditText) findViewById(R.id.usernameEt);
-        password = (EditText) findViewById(R.id.passwordEt);
+        name = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
 
     }
 
@@ -37,7 +37,7 @@ public class Activity_B extends AppCompatActivity {
     }
 
     public void prev(View view){
-        startActivity(new Intent(this , Activity_A.class));
+        startActivity(new Intent(this , Activity_Prefs_A.class));
     }
 
     @Override
