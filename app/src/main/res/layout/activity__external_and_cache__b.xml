@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText_a"
-        android:hint="Enter Your Data Here"
+        android:hint="Click to load saved data"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -78,18 +78,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/button4"
-        android:layout_alignEnd="@+id/button4" />
+        android:layout_alignEnd="@+id/button4" /><![CDATA[
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView_a"
-        android:layout_below="@+id/editText_a"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText_a"
-        android:layout_alignEnd="@+id/editText_a" /><![CDATA[
+
 
     EditText
         android:layout_width="wrap_content"
@@ -100,5 +91,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/editText_a"
         android:layout_alignEnd="@+id/editText_a" />
+
 ]]>
 </RelativeLayout>
