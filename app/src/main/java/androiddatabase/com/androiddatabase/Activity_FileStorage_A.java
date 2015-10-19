@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,9 +28,12 @@ public class Activity_FileStorage_A extends AppCompatActivity {
 
         String username = name.getText().toString();
         String pass = password.getText().toString();
+        username += " ";
 
+        File file = null;
         FileOutputStream fileOutputStream = null;
         try {
+            file = getFilesDir();
             fileOutputStream = openFileOutput("FILE_NAME.txt" , Context.MODE_PRIVATE);
             fileOutputStream.write(username.getBytes());
             fileOutputStream.write(pass.getBytes());
@@ -38,11 +43,14 @@ public class Activity_FileStorage_A extends AppCompatActivity {
             e.printStackTrace();
         }finally {
             try {
-                fileOutputStream.close();
+                if(fileOutputStream != null){
+                    fileOutputStream.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        Toast.makeText(this , "Saved successfully to location "+ file +"/MY_FILE.txt" , Toast.LENGTH_LONG).show();
 
     }
 
