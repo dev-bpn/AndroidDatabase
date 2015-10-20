@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import androiddatabase.com.androiddatabase.SQLite.DisplayMessage;
 import androiddatabase.com.androiddatabase.SQLite.MyDatabaseAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         String user = username.getText().toString();
         String pass = password.getText().toString();
 
-
+        long id = helper.insertData(user , pass);
+        if(id < 0){
+            DisplayMessage.message(this , "No data inserted");
+        }else{
+            DisplayMessage.message(this , "Data inserted Successfully");
+        }
 
     }
 

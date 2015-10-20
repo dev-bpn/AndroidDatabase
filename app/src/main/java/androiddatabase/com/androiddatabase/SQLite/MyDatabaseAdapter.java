@@ -1,5 +1,6 @@
 package androiddatabase.com.androiddatabase.SQLite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,9 +16,15 @@ public class MyDatabaseAdapter {
     public MyDatabaseAdapter(Context context){
         helper = new MySQLiteHelper(context);
     }
-    public void insertData(String username , String password){
 
+    public long insertData(String username , String password){
 
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MySQLiteHelper.NAME , username);
+        contentValues.put(MySQLiteHelper.PASSWORD , password);
+        long id = db.insert(MySQLiteHelper.TABLE_NAME , null , contentValues);
+        return id;
 
     }
 
