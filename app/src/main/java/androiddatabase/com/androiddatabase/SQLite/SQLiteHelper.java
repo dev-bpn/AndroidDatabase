@@ -8,9 +8,16 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Dell on 10/20/2015.
  */
 public class SQLiteHelper extends SQLiteOpenHelper {
-    
-    public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+
+    private static final String DATABASE_NAME = "my_database";
+    private static final String TABLE_NAME = "my_table";
+    private static final int DATABASE_VERSION = 1;
+    private static final String UID = "_id";
+    private static final String NAME = "Name";
+
+
+    public SQLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
