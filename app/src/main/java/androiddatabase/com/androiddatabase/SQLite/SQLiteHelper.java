@@ -16,9 +16,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String UID = "_id";
     private static final String NAME = "Name";
 
-    private static final String CREATE_TABLE= "CREATE TABLE "+TABLE_NAME+" ("+UID+" PRIMARY KEY AUTOINCREMENT , "+NAME+" Varchar(255));";
     private Context context;
-
+    private static final String CREATE_TABLE= "CREATE TABLE "+TABLE_NAME+" ("+UID+" PRIMARY KEY AUTOINCREMENT , "+NAME+" Varchar(255));";
+    private static final String DROP_TABLE = "DROP TABLE "+TABLE_NAME+"IF EXISTS";
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -36,7 +36,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        try {
+            sqLiteDatabase.execSQL(DROP_TABLE);
+            onCreate(sqLiteDatabase);
+        } catch (SQLException e) {
+            DisplayMessage.message(context , ""+e);
+            e.printStackTrace();
+        }
     }
 }
