@@ -1,7 +1,6 @@
 package androiddatabase.com.androiddatabase;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -9,12 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import androiddatabase.com.androiddatabase.SQLite.MySQLiteHelper;
+import androiddatabase.com.androiddatabase.SQLite.MyDatabaseAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText username , password;
-    MySQLiteHelper helper;
+    MyDatabaseAdapter helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
 
-        helper = new MySQLiteHelper(this);
+        helper = new MyDatabaseAdapter(this);
 
     }
 
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         String user = username.getText().toString();
         String pass = password.getText().toString();
 
-        SQLiteDatabase db = helper.getWritableDatabase();
+
 
     }
 
