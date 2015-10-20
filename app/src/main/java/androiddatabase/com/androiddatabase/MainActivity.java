@@ -6,19 +6,33 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import androiddatabase.com.androiddatabase.SQLite.MySQLiteHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText username , password;
     MySQLiteHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
 
         helper = new MySQLiteHelper(this);
-        SQLiteDatabase sqLiteDatabase = helper.getWritableDatabase();
+
+    }
+
+    public void addUser(View view){
+
+        String user = username.getText().toString();
+        String pass = password.getText().toString();
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+
     }
 
     @Override

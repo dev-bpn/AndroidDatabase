@@ -12,13 +12,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "my_database";
     private static final String TABLE_NAME = "my_table";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 6;
     private static final String UID = "_id";
     private static final String NAME = "Name";
-    private static final String ADDRESS = "Address";
+    private static final String PASSWORD = "Password";
     private Context context;
 
-    private static final String CREATE_TABLE= "CREATE TABLE "+TABLE_NAME+" ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NAME+" VARCHAR(255) , "+ADDRESS+" VARCHAR(255));";
+    private static final String CREATE_TABLE= "CREATE TABLE "+TABLE_NAME+" ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NAME+" VARCHAR(255) , "+PASSWORD+" VARCHAR(255));";
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+ TABLE_NAME;
 
     public MySQLiteHelper(Context context) {
