@@ -71,6 +71,19 @@ public class MyDatabaseAdapter {
 
     }
 
+    public int updateData(String oldName , String newName){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MySQLiteHelper.NAME , newName);
+        String whereArgs[] ={oldName};
+        int count = db.update(MySQLiteHelper.TABLE_NAME , contentValues , MySQLiteHelper.NAME + " =? " , whereArgs);
+        return count;
+    }
+
+    public void deleteData(){
+
+    }
+
     static class MySQLiteHelper extends SQLiteOpenHelper{
         private static final String DATABASE_NAME = "my_database";
         private static final String TABLE_NAME = "my_table";

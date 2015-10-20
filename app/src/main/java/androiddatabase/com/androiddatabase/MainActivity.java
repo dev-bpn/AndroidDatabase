@@ -55,12 +55,21 @@ public class MainActivity extends AppCompatActivity {
         String data = name_specific.getText().toString();
         String name = data.substring(0 , data.indexOf(" "));
         String pass = data.substring(data.indexOf(" ")+1);
-        String specific_data = helper.getSpecificData(name , pass);
+        String specific_data = helper.getSpecificData(name, pass);
         if(specific_data != null){
             DisplayMessage.message(this , specific_data);
         }else{
             DisplayMessage.message(this , "Null");
         }
+
+    }
+
+    public void update(View view){
+        helper.updateData("bipin" , "deepen");
+        DisplayMessage.message(this , "Successfully updated..");
+    }
+
+    public void delete(View view){
 
     }
 
