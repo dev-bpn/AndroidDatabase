@@ -65,11 +65,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void update(View view){
-        helper.updateData("bipin" , "deepen");
-        DisplayMessage.message(this , "Successfully updated..");
+        int count = helper.updateData("bipin" , "deepen");
+        DisplayMessage.message(this , count+"");
     }
 
     public void delete(View view){
+        int count = helper.deleteData();
+        DisplayMessage.message(this , count+"");
 
     }
 

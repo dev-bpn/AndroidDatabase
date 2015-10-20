@@ -74,13 +74,17 @@ public class MyDatabaseAdapter {
     public int updateData(String oldName , String newName){
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(MySQLiteHelper.NAME , newName);
+        contentValues.put(MySQLiteHelper.NAME, newName);
         String whereArgs[] ={oldName};
         int count = db.update(MySQLiteHelper.TABLE_NAME , contentValues , MySQLiteHelper.NAME + " =? " , whereArgs);
         return count;
     }
 
-    public void deleteData(){
+    public int deleteData(){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String whereArgs[] = {"deepen"};
+        int count = db.delete(MySQLiteHelper.TABLE_NAME , MySQLiteHelper.NAME + " =? " , whereArgs);
+        return count;
 
     }
 
