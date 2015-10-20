@@ -47,26 +47,27 @@ public class MyDatabaseAdapter {
 
     }
 
-    public String getSpecificData(String name){
+    public String getSpecificData(String name , String password){
 
         SQLiteDatabase db = helper.getWritableDatabase();
 
-        String columns[] = {MySQLiteHelper.NAME , MySQLiteHelper.PASSWORD};
-        Cursor cursor = db.query(MySQLiteHelper.TABLE_NAME, columns, MySQLiteHelper.NAME + " =  ' "+name+" ' " , null, null, null, null);
+        String columns[] = {MySQLiteHelper.UID};
+        String selectionArgs[] = {name , password};
+        Cursor cursor = db.query(
+                MySQLiteHelper.TABLE_NAME, columns,
+                MySQLiteHelper.NAME + " =? AND "+MySQLiteHelper.PASSWORD+ " =?  " ,
+                selectionArgs, null, null, null);
+
         StringBuffer stringBuffer = new StringBuffer();
 
         while(cursor.moveToNext()){
 
-            int index1 = cursor.getColumnIndex(MySQLiteHelper.NAME);
-            int index2 = cursor.getColumnIndex(MySQLiteHelper.PASSWORD);
+            int index0 = cursor.getColumnIndex(MySQLiteHelper.UID);
 
-            String personName = cursor.getString(index1);
-            String password = cursor.getString(index2);
-            stringBuffer.append(name + " "+ password+ "\n");
+            int  p_id = cursor.getInt(index0);
+            stringBuffer.append(p_id+ "\n");
         }
         return stringBuffer.toString();
-        // return null;
-        // https://www.youtube.com/watch?v=MDdkdsG-Yww&index=19&list=PLonJJ3BVjZW5JdoFT0Rlt3ry5Mjp7s8cT
 
     }
 

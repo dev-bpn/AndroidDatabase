@@ -52,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getSpecificDetail(View view){
-        String name = name_specific.getText().toString();
-        String specific_data = helper.getSpecificData(name);
+        String data = name_specific.getText().toString();
+        String name = data.substring(0 , data.indexOf(" "));
+        String pass = data.substring(data.indexOf(" ")+1);
+        String specific_data = helper.getSpecificData(name , pass);
         if(specific_data != null){
             DisplayMessage.message(this , specific_data);
         }else{
