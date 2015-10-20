@@ -2,6 +2,7 @@ package androiddatabase.com.androiddatabase.SQLite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -28,10 +29,28 @@ public class MyDatabaseAdapter {
 
     }
 
+    public String getAllData(){
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        String columns[] = {MySQLiteHelper.UID , MySQLiteHelper.NAME , MySQLiteHelper.PASSWORD};
+        Cursor cursor = db.query(MySQLiteHelper.TABLE_NAME, columns, null, null, null, null, null);
+        StringBuffer stringBuffer = new StringBuffer();
+
+        while(cursor.moveToNext()){
+            int c_id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String password = cursor.getString(2);
+            stringBuffer.append(c_id + " " + name + " "+ password+ "\n");
+        }
+        return stringBuffer.toString();
+
+    }
+
     static class MySQLiteHelper extends SQLiteOpenHelper{
         private static final String DATABASE_NAME = "my_database";
         private static final String TABLE_NAME = "my_table";
-        private static final int DATABASE_VERSION = 6;
+        private static final int DATABASE_VERSION = 7;
         private static final String UID = "_id";
         private static final String NAME = "Name";
         private static final String PASSWORD = "Password";
