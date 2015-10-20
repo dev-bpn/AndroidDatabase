@@ -46,4 +46,24 @@
         android:layout_alignRight="@+id/save"
         android:layout_alignEnd="@+id/save" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username_specific"
+        android:hint="Enter name of person"
+        android:layout_below="@+id/button6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Detail"
+        android:id="@+id/idsss"
+        android:onClick="getSpecificDetail"
+        android:layout_alignBottom="@+id/username_specific"
+        android:layout_toRightOf="@+id/username_specific"
+        android:layout_alignRight="@+id/button6"
+        android:layout_alignEnd="@+id/button6" />
+
 </RelativeLayout>

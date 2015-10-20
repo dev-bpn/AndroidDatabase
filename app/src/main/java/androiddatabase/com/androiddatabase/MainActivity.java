@@ -13,7 +13,7 @@ import androiddatabase.com.androiddatabase.SQLite.MyDatabaseAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText username , password;
+    private EditText username , password , name_specific;
     MyDatabaseAdapter helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        name_specific = (EditText) findViewById(R.id.username_specific);
 
         helper = new MyDatabaseAdapter(this);
 
@@ -44,6 +45,17 @@ public class MainActivity extends AppCompatActivity {
         String data = helper.getAllData();
         if(data != null){
             DisplayMessage.message(this , data);
+        }else{
+            DisplayMessage.message(this , "Null");
+        }
+
+    }
+
+    public void getSpecificDetail(View view){
+        String name = name_specific.getText().toString();
+        String specific_data = helper.getSpecificData(name);
+        if(specific_data != null){
+            DisplayMessage.message(this , specific_data);
         }else{
             DisplayMessage.message(this , "Null");
         }
